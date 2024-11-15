@@ -3,10 +3,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; 
     margin: 0;
     background: linear-gradient(135deg, #333, #555);
     color: #fff;
+    padding: 20px; 
   }
   
   .container {
@@ -14,7 +15,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 450px; 
+    width: 100%;
+    max-width: 600px; 
   }
   
   header {
@@ -30,7 +32,8 @@ body {
   
   .input-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; 
+    gap: 10px; 
     margin-bottom: 20px;
   }
   
@@ -44,7 +47,6 @@ body {
   }
   
   button[type="submit"] {
-    margin-left: 10px;
     padding: 10px;
     border: none;
     background: black;
@@ -62,13 +64,13 @@ body {
     border-radius: 5px; 
     padding: 10px; 
     background: #333; 
+    max-height: 400px; 
+    overflow-y: auto; 
   }
   
   .list-section ul {
     list-style: none;
     padding: 0;
-    max-height: 300px; 
-    overflow-y: auto; 
   }
   
   .list-section li {
@@ -77,6 +79,7 @@ body {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #555; 
+    width: 100%;
     box-sizing: border-box;
   }
   
@@ -94,7 +97,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 200px; 
   }
   
   .list-section li button {
@@ -108,8 +110,7 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
     border: none;
-    width: 80px; 
-    
+    min-width: 80px; 
   }
   
   button.complete {
@@ -137,5 +138,20 @@ body {
   
   button.delete:hover {
     background: #c82333;
+  }
+  
+
+  @media (min-width: 600px) {
+    .input-section {
+      flex-direction: row; 
+    }
+  
+    input[type="text"] {
+      margin-right: 10px;
+    }
+  
+    button[type="submit"] {
+      margin-left: 0;
+    }
   }
   
